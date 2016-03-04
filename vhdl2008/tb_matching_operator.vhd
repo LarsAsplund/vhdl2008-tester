@@ -8,7 +8,7 @@ entity tb_matching_operators is
     runner_cfg : runner_cfg_t);
 end entity tb_matching_operators;
 
-architecture RTL of tb_matching_operators is
+architecture tb of tb_matching_operators is
 begin
   test_runner: process is
   begin
@@ -119,9 +119,7 @@ begin
       end if;
     end loop;
 
-
     test_runner_cleanup(runner);
+    wait;
   end process test_runner;
-
-
-end architecture RTL;
+end architecture tb;

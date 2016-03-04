@@ -37,14 +37,9 @@ begin
   begin
     test_runner_setup(runner, runner_cfg);
 
-    while test_suite loop
-      if run("Test that package type generic has the indended affect") then
-        check_equal(work.my_pkg.echo(17), 17);
-      end if;
-    end loop;
+    check_equal(work.my_pkg.echo(17), 17);
 
     test_runner_cleanup(runner);
     wait;
   end process test_runner;
-
 end architecture tb;

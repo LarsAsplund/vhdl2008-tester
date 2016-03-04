@@ -8,7 +8,7 @@ entity tb_condition_operator is
     runner_cfg : runner_cfg_t);
 end entity;
 
-architecture RTL of tb_condition_operator is
+architecture tb of tb_condition_operator is
 begin
   test_runner: process is
   begin
@@ -37,6 +37,6 @@ begin
     end loop;
 
     test_runner_cleanup(runner);
+    wait;
   end process test_runner;
-
-end architecture RTL;
+end architecture tb;

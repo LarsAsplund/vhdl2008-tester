@@ -1,7 +1,6 @@
 package generic_pkg is
   generic (
-    function operation (value: integer) return integer
-    );
+    function operation (value: integer) return integer);
 
   function repeat (
     constant value : integer;
@@ -10,7 +9,6 @@ package generic_pkg is
 end package;
 
 package body generic_pkg is
-
   function repeat (
     constant value : integer;
     constant n_times : positive)
@@ -23,7 +21,6 @@ package body generic_pkg is
 
     return return_value;
   end;
-
 end package body generic_pkg;
 
 package operations_pkg is
@@ -59,14 +56,9 @@ begin
   begin
     test_runner_setup(runner, runner_cfg);
 
-    while test_suite loop
-      if run("Test that package function generic has the indended affect") then
-        check_equal(work.my_pkg.repeat(3, 2), 81);
-      end if;
-    end loop;
+    check_equal(work.my_pkg.repeat(3, 2), 81);
 
     test_runner_cleanup(runner);
     wait;
   end process test_runner;
-
 end architecture tb;
