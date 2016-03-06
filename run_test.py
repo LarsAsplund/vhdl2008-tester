@@ -34,7 +34,7 @@ class TestVHDL2008Support(unittest.TestCase):
     def check(self, testbench_name):
         vu = VUnit.from_argv(['--clean'])
         lib = vu.add_library('lib')
-        lib.add_source_files(join(dirname(__file__), testbench_name))
+        lib.add_source_files(join(dirname(__file__), 'vhdl2008', testbench_name))
         self.assertTrue(vu._main(), 'Failing test case(s) in testbench')
 
 if __name__ == '__main__':
