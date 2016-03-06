@@ -35,7 +35,70 @@ begin
         check_equal(?? 'Z', false);
       elsif run("Test condition operator with -") then
         check_equal(?? '-', false);
-
+      elsif run("Test implicit condition operator with 1") then
+        if std_logic'('1') then
+          check_passed;
+        else
+          check_failed;
+        end if;
+        if bit'('1') then
+          check_passed;
+        else
+          check_failed;
+        end if;
+      elsif run("Test implicit condition operator with H") then
+        if 'H' then
+          check_passed;
+        else
+          check_failed;
+        end if;
+      elsif run("Test implicit condition operator with 0") then
+        if std_logic'('0') then
+          check_failed;
+        else
+          check_passed;
+        end if;
+        if bit'('0') then
+          check_failed;
+        else
+          check_passed;
+        end if;
+      elsif run("Test implicit condition operator with L") then
+        if 'L' then
+          check_failed;
+        else
+          check_passed;
+        end if;
+      elsif run("Test implicit condition operator with U") then
+        if 'U' then
+          check_failed;
+        else
+          check_passed;
+        end if;
+      elsif run("Test implicit condition operator with W") then
+        if 'W' then
+          check_failed;
+        else
+          check_passed;
+        end if;
+      elsif run("Test implicit condition operator with X") then
+        if 'X' then
+          check_failed;
+        else
+          check_passed;
+        end if;
+      elsif run("Test implicit condition operator with Z") then
+        if 'Z' then
+          check_failed;
+        else
+          check_passed;
+        end if;
+      elsif run("Test implicit condition operator with -") then
+        if '-' then
+          check_failed;
+        else
+          check_passed;
+        end if;
       end if;
     end loop;
 
