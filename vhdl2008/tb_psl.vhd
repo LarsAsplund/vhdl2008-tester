@@ -12,7 +12,7 @@ end entity tb_psl;
 architecture tb of tb_psl is
   signal clk, req, grant : std_logic := '0';
 
-  default clock is rising_edge(clk);
+  -- psl default clock is rising_edge(clk);
 begin
   test_runner: process is
   begin
@@ -36,7 +36,7 @@ begin
     grant <= req;
   end process arbiter;
 
-  assert always (req -> next[1] grant);
+  -- psl assert always (req -> next[1](grant));
   -- same as check_next(clk, check_enabled, req, grant);
 
 end architecture tb;
