@@ -24,6 +24,9 @@ class TestVHDL2008Support(unittest.TestCase):
     def test_psl(self):
         self.check('tb_psl.vhd')
 
+    def test_numeric_std_unsigned(self):
+        self.check('tb_numeric_std_unsigned.vhd')
+
     def check(self, testbench_name):
         vu = VUnit.from_argv(['--clean'])
         lib = vu.add_library('lib')

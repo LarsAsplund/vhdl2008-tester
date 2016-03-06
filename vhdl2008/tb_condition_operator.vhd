@@ -19,7 +19,7 @@ begin
         check_equal(?? std_logic'('1'), true);
         check_equal(?? bit'('1'), true);
       elsif run("Test condition operator with H") then
-        check_equal(?? std_logic'('H'), true);
+        check_equal(?? 'H', true);
       elsif run("Test condition operator with 0") then
         check_equal(?? std_logic'('0'), false);
         check_equal(?? bit'('0'), false);
