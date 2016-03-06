@@ -21,6 +21,9 @@ class TestVHDL2008Support(unittest.TestCase):
     def test_type_generics_in_packages(self):
         self.check('tb_type_generics_in_packages.vhd')
 
+    def test_psl(self):
+        self.check('tb_psl.vhd')
+
     def check(self, testbench_name):
         vu = VUnit.from_argv(['--clean'])
         lib = vu.add_library('lib')
