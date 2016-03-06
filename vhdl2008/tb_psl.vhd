@@ -36,7 +36,7 @@ begin
     grant <= req;
   end process arbiter;
 
-  assert always (req -> next[1] grant);
+  assert always (req -> next[1](grant));
   -- same as check_next(clk, check_enabled, req, grant);
 
 end architecture tb;
