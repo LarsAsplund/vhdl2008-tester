@@ -18,7 +18,7 @@ begin
       if run("Test condition operator with 1") then
         check_equal(?? '1', true);
       elsif run("Test condition operator with H") then
-        check_equal(?? '1', true);
+        check_equal(?? 'H', true);
       elsif run("Test condition operator with 0") then
         check_equal(?? '0', false);
       elsif run("Test condition operator with L") then
@@ -33,6 +33,18 @@ begin
         check_equal(?? 'Z', false);
       elsif run("Test condition operator with -") then
         check_equal(?? '-', false);
+      elsif run("Test implicit condition operator - std_logic") then
+        if std_logic'('1') then
+          check_passed;
+        else
+          check_failed;
+        end if;
+      elsif run("Test implicit condition operator - bit") then
+        if bit'('1') then
+          check_passed;
+        else
+          check_failed;
+        end if;
       end if;
     end loop;
 
