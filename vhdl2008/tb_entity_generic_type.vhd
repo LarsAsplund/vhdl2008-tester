@@ -1,13 +1,13 @@
 -- Generic types in entity
 entity entity_generic_type is
-	generic(
-		type mytype;
-		function is_good (x: mytype) return boolean
-	);
-	port(
-		data : in  mytype;
-		good : out boolean
-	);
+    generic(
+        type mytype;
+        function is_good (x: mytype) return boolean
+    );
+    port(
+        data : in  mytype;
+        good : out boolean
+    );
 end entity;
 
 architecture arch of entity_generic_type is
@@ -20,7 +20,8 @@ context vunit_lib.vunit_context;
 
 entity tb_entity_generic_type is
     generic(
-        runner_cfg : runner_cfg_t);
+        runner_cfg : runner_cfg_t
+    );
 end entity;
 
 architecture tb of tb_entity_generic_type is
