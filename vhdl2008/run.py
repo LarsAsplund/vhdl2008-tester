@@ -2,6 +2,7 @@ import unittest
 from vunit import VUnit
 from os.path import join, dirname
 
+
 class TestVHDL2008Support(unittest.TestCase):
     def test_matching_operator(self):
         self.check('tb_matching_operator.vhd')
@@ -26,6 +27,9 @@ class TestVHDL2008Support(unittest.TestCase):
 
     def test_numeric_std_unsigned(self):
         self.check('tb_numeric_std_unsigned.vhd')
+
+    def test_entity_generic_type(self):
+        self.check('tb_entity_generic_type.vhd')
 
     def check(self, testbench_name):
         vu = VUnit.from_argv(['--clean'])
