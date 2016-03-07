@@ -31,6 +31,9 @@ class TestVHDL2008Support(unittest.TestCase):
     def test_entity_generic_type(self):
         self.check('tb_entity_generic_type.vhd')
 
+    def test_bit_string_literals(self):
+        self.check('tb_bit_string_literals.vhd')
+
     def check(self, testbench_name):
         vu = VUnit.from_argv(['--clean'])
         lib = vu.add_library('lib')
